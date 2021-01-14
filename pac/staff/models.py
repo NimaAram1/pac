@@ -8,7 +8,7 @@ class Staff(models.Model):
     )
     first_name = models.CharField(max_length=15,verbose_name='نام')
     last_name = models.CharField(max_length=15,verbose_name='نام خانوادگی')
-    user = models.OneToOneField('account.User',on_delete=models.CASCADE,verbose_name='کاربر')
+    user = models.OneToOneField('account.User',on_delete=models.CASCADE,verbose_name='کاربر',related_name='Ustaff')
     profile_image = models.ImageField(upload_to='media',verbose_name='عکس پروفایل',blank=True,null=True)
     bio = models.TextField(verbose_name='درباره کارمند',blank=True,null=True)
     created = models.DateTimeField(auto_now_add=True, verbose_name='ساخته شده')
