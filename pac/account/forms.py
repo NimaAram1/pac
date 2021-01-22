@@ -22,11 +22,12 @@ class UserRegisterationForm(forms.ModelForm):
         self.fields['profile_image'].label = "عکس پروفایل"
         self.fields['bio'].required = False
         self.fields['profile_image'].required = False
+        self.fields['password'].widget = forms.PasswordInput()
         self.fields['username'].widget.attrs = {'class':"focus:ring form-md mx-auto text-center"}
         self.fields['password'].widget.attrs = {'class':"focus:ring form-md mx-auto text-center"}
         self.fields['bio'].widget.attrs = {'class':"focus:ring form-md mx-auto text-center"}
         self.fields['profile_image'].widget.attrs = {'class':"focus:ring form-md mx-auto text-center"}
-
+        
     class Meta:
         model = User
         fields = ['username','password','bio','profile_image'] 

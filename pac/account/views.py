@@ -28,27 +28,42 @@ class user_login(LoginProtecterElse,View):
         return render(request,'login.html',{'form':form})    
 
 
-class user_logout(View,LoginProtecter):
+class user_logout(LoginProtecter,View):
     def get(self,request):
         logout(request)
         messages.success(request,'You logged out successfully.')
         return redirect("company:home")
          
 
-class user_register(View):
-    def post(self,request):
-        form = UserRegisterationForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = User.objects.create_user(username=cd['username'],password=cd['password'],bio=cd['bio'],profile_image=cd['profile_image'])
-            user.save()
-            user_name = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
-            user2 = authenticate(username=user_name,password=password)
-            login(request,user2)
-            messages.success(request,"You registered and loggined successfully.")
-            return redirect("company:home")
+class user_register(LoginProtecterElse,CreateView):
+    model = User
+    template_name = 'register.html'
+    success_url = reverse_lazy("company:home")
+    form_class = UserRegisterationForm 
+    def form_valid(self,form):
+        user = form.save()
+        login(self.request, user)
+        messages.success(self.request,'You registered and loggined successfully.')
+        return redirect('company:home')
 
-    def get(self,request):
-        form = UserRegisterationForm()
-        return render(request,'register.html',{'form':form})
+
+## another way ##
+
+
+# class user_register(View):
+#     def post(self,request):
+#         form = UserRegisterationForm(request.POST)
+#         if form.is_valid():
+#             cd = form.cleaned_data
+#             user = User.objects.create_user(username=cd['username'],password=cd['password'],bio=cd['bio'],profile_image=cd['profile_image'])
+#             user.save()
+#             user_name = form.cleaned_data.get("username")
+#             password = form.cleaned_data.get("password")
+#             user2 = authenticate(username=user_name,password=password)
+#             login(request,user2)
+#             messages.success(request,"You registered and loggined successfully.")
+#             return redirect("company:home")
+
+#     def get(self,request):
+#         form = UserRegisterationForm()
+#         return render(request,'register.html',{'form':form})           
