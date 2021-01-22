@@ -1,0 +1,9 @@
+{% if messages %}
+    {% for msg in messages %}
+    {% if msg.tags == 'error' %}
+    <p class="bg-red-500  p-5 block mx-auto rounded-xl text-white text-center mt-3 fe">{{msg}}</p>
+    {% elif msg.tags == 'success' %}
+    <p class="bg-green-500  p-5 block mx-auto f rounded-xl text-white text-center mt-3 f">{{msg}}</p>
+    {% endif %}
+    {% endfor %}
+{% endif %}

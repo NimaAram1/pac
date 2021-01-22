@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The good space for handle your company - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/fontconfig.css" %}">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+{% include "partials/navbar.html" %}
+{% block content %}{% endblock %}
+{% include "partials/messages.html" %}
+</body>
+</html>

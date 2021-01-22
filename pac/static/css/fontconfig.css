@@ -1,0 +1,85 @@
+@font-face{
+    font-family: 'vazir';
+    src : url("../fonts/Vazir.ttf")
+}
+@font-face{
+    font-family: 'num';
+    src : url("../fonts/num.ttf")
+}
+/*  customizeable style  */
+*::selection{
+    background-color: seagreen;
+    color : white;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body{
+    font-family: 'Rubik','vazir','num'!important;
+   
+}
+.m-fix{
+    margin: 0rem!important;
+}
+.center{
+    justify-content: center!important;
+    align-items: center!important;
+}
+a{
+    transition: border-bottom 0.5s ease-in;
+    border-bottom: 0.10rem solid white ;
+}
+a:hover{
+    border-bottom: 0.10rem solid #000 ;
+}
+._section1 h1{
+    opacity: 1!important;
+    z-index : 1000;
+}
+._section1{
+    background-image:url("../images/section1.jpg");
+    background-size:cover ;
+    background-origin: border-box;
+}
+._back_titile_effects{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2.5rem;
+
+    
+}
+
+
+footer{
+   flex-direction: column; 
+}
+
+.f{
+    width: 400px!important;
+    position:fixed;
+    top:25%;
+    left: 35%;
+}
+.fe{
+    width: 400px!important; 
+}
+.form-md{
+    width: 600px!important;
+}
+#div_id_password{
+    text-align: center;
+}
+#div_id_username{
+    text-align: center;
+}
+#div_id_bio{
+    text-align: center!important;
+}
+#div_id_profile_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}

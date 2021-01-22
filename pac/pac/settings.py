@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'staff.apps.StaffConfig',
     'company.apps.CompanyConfig',
+    "crispy_forms",
+    "crispy_tailwind",
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -121,10 +124,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_FILESDIRS = [
+STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
+# crisp_forms_settings
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
+
+
+LOGIN_REDIRECT_URL = 'company:home'
+LOGOUT_REDIRECT_URL = 'company:home'
