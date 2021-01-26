@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
+{% block title %}
+setupping staff
+{% endblock  %}
+{% block content %}
+<form action="" method="post" class="mt-5" autocomplete='off' enctype="multipart/form-data">
+{% csrf_token %}
+{{form.first_name|as_crispy_field}}
+{{form.last_name|as_crispy_field}}
+{{form.job|as_crispy_field}}
+{{form.resume|as_crispy_field}}
+<input type="submit" value="Done!" class="bg-indigo-600	mx-auto block w-64 rounded-xl p-3 cursor-pointer hover:bg-indigo-500 text-white">
+</form>
+{% endblock  %}

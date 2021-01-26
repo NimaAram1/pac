@@ -16,7 +16,7 @@ class Staff(models.Model):
     updated = models.DateTimeField(auto_now=True, verbose_name='به روز شده')
     job = models.CharField(max_length=4,choices=STAFF_CHOICES,verbose_name='سمت',blank=True,null=True)
     resume = models.FileField(blank=True,null=True,verbose_name='رزومه',upload_to='resume')
-
+    setup_completed = models.BooleanField(default=False)
     def __str__(self):
         return  self.user.username
 

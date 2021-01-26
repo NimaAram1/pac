@@ -83,3 +83,24 @@ footer{
     text-align: center;
     
 }
+#div_id_job{
+    text-align: center;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_id_resume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+#div_id_first_name{
+    text-align: center;
+}
+#div_id_last_name{
+    text-align: center;
+}

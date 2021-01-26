@@ -6,7 +6,9 @@
     <ul class="flex center ">
     <a href="#" class="center m-5"><li>Feutres</li></a>
     <a href="#" class="center m-5"><li>Privecy</li></a>
-    <a href="#" class="center m-5"><li>Panel</li></a>
+    {% if user.is_authenticated %}
+    <a href="{% url "staff:panel" %}" class="center m-5"><li>Panel</li></a>
+    {% endif %}
     {% if user.is_authenticated %}
     <a href="{% url "account:logout" %}" class="center m-5 bg-green-100 rounded-xl p-3"><li>Logout</li></a>
     {% else %}
