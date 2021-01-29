@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+home panel
+{% endblock  %}
+{% block content %}
+<div class="block mx-auto title_home text-white bg-blue-500 p-3">
+Your panel
+</div>
+
+<div class="flex justify-center mt-5">
+<div class="p-3 rounded-xl bg-blue-600 text-white gh m-2 text-center text-xl shadow-xl">{{staff.get_job_display}}</div>
+<div class="p-3 rounded-xl bg-blue-600 text-white gh m-2 text-center text-xl shadow-xl"> 
+{{staff.bio}}
+</div>
+</div>
+
+{% endblock  %}

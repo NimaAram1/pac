@@ -104,3 +104,15 @@ footer{
 #div_id_last_name{
     text-align: center;
 }
+.title_home{
+    font-size: 28px!important;
+    text-align: center;
+}
+.gh{
+    width: 600px;
+    height: 250px;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
