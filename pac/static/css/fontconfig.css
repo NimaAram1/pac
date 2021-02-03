@@ -116,3 +116,23 @@ footer{
     display: flex;
     justify-content: center;
 }
+#div_id_cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+#div_id_staff{
+    text-align: center;
+    width: 600px!important;
+    margin-left: auto;
+    margin-right: auto;
+}
+#div_id_about{
+    text-align: center;
+}
+#div_id_name{
+    text-align: center;
+}

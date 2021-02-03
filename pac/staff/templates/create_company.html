@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
+{% block title %}
+create your company!
+{% endblock  %}
+{% block content %}
+<form action="" method="post" class="mt-5" autocomplete='off' enctype="multipart/form-data">
+{% csrf_token %}
+{{form.name|as_crispy_field}}
+{{form.about|as_crispy_field}}
+{{form.cover|as_crispy_field}}
+{{form.staff|as_crispy_field}}
+<input type="submit" value="Create" class="bg-pink-600	mx-auto block w-64 rounded-xl p-3 cursor-pointer hover:bg-pink-500 text-white">
+</form>
+{% endblock  %}
